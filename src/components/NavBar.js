@@ -12,11 +12,11 @@ const linkStyles = {
     color: "white",
   };
   
-const NavBar=({ setIsLoggedIn })=>{
+const NavBar=({ setToken })=>{
     const navigate = useNavigate();
 
     function handleLogout() {
-      setIsLoggedIn(false);
+      setToken("")
       navigate('/login');
     }
     return (

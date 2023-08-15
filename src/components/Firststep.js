@@ -35,16 +35,6 @@ export default function Firststep({fomData, setFomData}) {
 
              </textarea>
             </div>
-
-           
-
-            
-
-
-
-
-
-
     </div>
   )
 }

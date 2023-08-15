@@ -1,8 +1,8 @@
 import React,{  Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Home=({ isLoggedIn })=>{
-    if (!isLoggedIn) return <Navigate to="/login" />;
+const Home=()=>{
+    // if (!isLoggedIn) return <Navigate to="/login" />;
     return (
         <div style={{backgroundColor:"aliceblue"}}>
           <h1>Put a descriptionn about the site</h1>
