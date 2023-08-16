@@ -24,8 +24,8 @@ function Fifthstep({fomData, setFomData}) {
              <textarea class="form-control"
               placeholder='fifthAnswer' 
               rows="6" 
-              value={fomData.fifthAnswer}
-              onChange={(e) => {setFomData({ ...fomData, fifthAnswer: e.target.value });}}>
+              value={fomData.beneficiaries}
+              onChange={(e) => {setFomData({ ...fomData, beneficiaries: e.target.value });}}>
               </textarea>
             </div> 
     </div>

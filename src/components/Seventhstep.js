@@ -21,8 +21,8 @@ function Seventhstep({fomData, setFomData}) {
              class="form-control" 
              placeholder='seventhAnswer' 
              rows="6" 
-             value={fomData.seventhAnswer}
-             onChange={(e) => {setFomData({ ...fomData, seventhAnswer: e.target.value });}}>
+             value={fomData.income}
+             onChange={(e) => {setFomData({ ...fomData, income: e.target.value });}}>
                 
              </textarea>
             </div>

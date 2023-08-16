@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Firststep from "./Firststep";
 import Secondstep from "./Secondstep";
 import Thirdstep from "./Thirdstep";
@@ -10,21 +10,60 @@ import Answers from "./Answers";
 
 
 //container of all the steps
-const Form=()=>{
+const Form=({token})=>{
 
   const [page, setPage] = useState(0);//keeps track of which step/page we're in
   const [fomData, setFomData] = useState({
-    firstAnswer: "",
-    secondAnswer: "",
-    thirdAnswer: "",
-    forthAnswer: "",
-    fifthAnswer: "",
-    sixthAnswer: "",
-    seventhAnswer: "",
+    you: "",
+    do: "",
+    love: "",
+    serve: "",
+    beneficiaries: "",
+    transform: "",
+    income: "",
     
   });
+//get the form answers if already entered. set page to last
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
+const [isSubmitted, setIsSubmitted] = useState(false);
+const getProfile = ()=>{
+  fetch("http://localhost:4000/profile",{
+    method: "GET",
+    headers: {
+      "Authorization": `Bearer ${token}`
+    }
+  })
+  .then(r=> {
+    if(r.ok){
+      r.json().then(data=>{
+        if(data.profile){
+          setFomData(data.profile)
+          setPage(6)
+          setIsSubmitted(true)
+        }
+      })
+    }
+  })
+}
+
+useEffect(()=>{
+  getProfile()
+},[])
+
+const handleSubmit = ()=>{
+  fetch("http://localhost:4000/profile/edit",{
+    method: "POST",
+    headers:{
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    },
+    body: JSON.stringify(fomData)
+  }).then(r=>{
+    if(r.ok){
+      alert("Responses saved!!")
+    }
+  })
+}
 
   const FormTitles = ["Who are you?",
    "What do you do well?",
@@ -92,8 +131,9 @@ const Form=()=>{
             class="btn btn-secondary"
             onClick={() => {
               if (page === FormTitles.length - 1) {
-                alert("FORM SUBMITTED");//submit to an API also display answers so user can see
+                // alert("FORM SUBMITTED");//submit to an API also display answers so user can see
                 // console.log(fomData);
+                handleSubmit()
                 //update the state when submit form
                 setIsSubmitted(true);
 

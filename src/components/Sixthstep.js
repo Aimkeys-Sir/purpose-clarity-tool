@@ -24,8 +24,8 @@ function Sixthstep({fomData, setFomData}) {
              class="form-control" 
              placeholder='sixthAnswer'
               rows="6" 
-              value={fomData.sixthAnswer}
-              onChange={(e) => {setFomData({ ...fomData, sixthAnswer: e.target.value });}}>
+              value={fomData.transform}
+              onChange={(e) => {setFomData({ ...fomData, transform: e.target.value });}}>
                 
               </textarea>
             </div>

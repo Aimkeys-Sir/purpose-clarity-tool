@@ -29,8 +29,8 @@ function Forthstep({fomData, setFomData}) {
              class="form-control" 
              placeholder='forthAnswer' 
              rows="6" 
-             value={fomData.forthAnswer}
-             onChange={(e) => {setFomData({ ...fomData, forthAnswer: e.target.value });}}>
+             value={fomData.serve}
+             onChange={(e) => {setFomData({ ...fomData, serve: e.target.value });}}>
 
              </textarea>
             </div>

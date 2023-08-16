@@ -25,8 +25,8 @@ function Secondstep({fomData, setFomData}) {
              class="form-control" 
              placeholder='secondAnswer' 
              rows="6" 
-             value={fomData.secondAnswer}
-             onChange={(e) => {setFomData({ ...fomData, secondAnswer: e.target.value });}}>
+             value={fomData.do}
+             onChange={(e) => {setFomData({ ...fomData, do: e.target.value });}}>
 
              </textarea>
             </div>

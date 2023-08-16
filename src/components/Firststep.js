@@ -30,8 +30,8 @@ export default function Firststep({fomData, setFomData}) {
              class="form-control" 
              placeholder='firstAnswer' 
              rows="6" 
-             value={fomData.firstAnswer}
-             onChange={(e) => {setFomData({ ...fomData, firstAnswer: e.target.value });}}>
+             value={fomData.you}
+             onChange={(e) => {setFomData({ ...fomData, you: e.target.value });}}>
 
              </textarea>
             </div>

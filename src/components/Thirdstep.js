@@ -32,8 +32,8 @@ function Thirdstep({fomData, setFomData}) {
               class="form-control" 
               placeholder='thirdAnswer' 
               rows="6" 
-              value={fomData.thirdAnswer}
-              onChange={(e) => {setFomData({ ...fomData, thirdAnswer: e.target.value });}}>
+              value={fomData.love}
+              onChange={(e) => {setFomData({ ...fomData, love: e.target.value });}}>
                 
               </textarea>
             </div>
